@@ -1,0 +1,249 @@
+---
+//importacion de imagenes
+import LogoImg from '../assets/logo-tenIEU.png'
+
+//importacion de Iconos
+import ArrowIcon from "../assets/icons/Chevron.astro";
+import BuscarIcon from "../assets/icons/Buscar.astro";
+import MoonIcon from "../assets/icons/Moon.astro";
+import ShoppingIcon from "../assets/icons/Shopping.astro";
+import UserIcon from '../assets/icons/User.astro';
+//Iconos de dropdown
+import SoccerIcon from "../assets/icons/Soccer.astro";
+import BasketballIcon from "../assets/icons/Basketball.astro";
+import RunningIcon from "../assets/icons/Running.astro";
+import SkateboardIcon from "../assets/icons/Skateboarding.astro";
+import ShoeIcon from "../assets/icons/Shoe.astro";
+import ArrowRightIcon from "../assets/icons/Arrow.astro";
+---
+<header class="header">
+    <nav class="navbar">
+        <div class="content-logo cursor-pointer">
+            <a class="contentainer-logo">
+                <img class="img-logo" src={LogoImg.src} alt="Logo de la empresa IEU">
+                <h1>TenIEU</h1>
+            </a>
+        </div>
+
+
+        <ul class="header-list">
+            <li class="header-link">
+                <a href="/">Home</a>
+            </li>
+            <li class="header-link dropdown">
+                <a href="">
+                    Categories
+                    <ArrowIcon class="w-6"/>
+                </a>
+                <ul class="header-dropdown">
+                    <li class="dropdown-link">
+                        <a href="">
+                            <SoccerIcon class="w-10"/>
+                            Soccer
+                        </a>
+                    </li>
+                    <li class="dropdown-link">
+                        <a href="">
+                            <BasketballIcon class="w-10"/>
+                            Basketball
+                        </a>
+                    </li>
+                    <li class="dropdown-link">
+                        <a href="">
+                            <RunningIcon class="w-10"/>
+                            Running
+                        </a>
+                    </li>
+                    <li class="dropdown-link">
+                        <a href="">
+                            <ShoeIcon class="w-10"/>
+                            Lifestyle
+                        </a>
+                    </li>
+                    <li class="dropdown-link">
+                        <a href="">
+                            <SkateboardIcon class="w-10"/>
+                            Street
+                        </a>
+                    </li>
+                    <div class="line"></div>
+                    <li class="dropdown-link active">
+                        <a href="">
+                            See more
+                            <ArrowRightIcon class="w-10"/>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="header-link">
+                <a href="">Products</a>
+            </li>
+        </ul>
+
+        <section class="header-conf">
+            
+            <div class="header-conf-input">
+                <BuscarIcon class="w-12 h-12" />
+            </div>
+
+            <div class="header-conf-darkmode">
+                <MoonIcon class="w-12 h-12" />
+            </div>
+
+            <div class="header-conf-shopping">
+                <a href="/carrito">
+                    <ShoppingIcon class="w-12 h-12" />
+                </a>
+            </div>
+        
+            <div class="header-conf-profile">
+                <UserIcon class="w-12 h-12" />
+
+                <article class="header-profile-card">
+
+                </article>
+            </div>
+
+        </section>
+    </nav>
+</header>
+
+<style>
+    .header{
+        width: 100%;
+        height: 9rem;
+        position:sticky;
+        top: 0;
+        background-color:var(--color-white);
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .navbar{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .content-logo{
+        display: flex;
+        align-items: center;
+
+        .contentainer-logo{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+
+            img{
+                width: 5rem;
+            }
+        }
+
+        h1{
+            font-size: 2.5rem;
+            font-weight:800;
+        }
+    }
+
+    .header-list{
+        display: flex;
+        gap: 2rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .header-link{
+        a{
+            transition: color 0.2s ease-in-out;
+            &:hover{
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .dropdown{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        a{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+    }
+
+    .dropdown::before {
+        content: '';
+        position: absolute;
+        top: 1rem;  /* Cubre el gap */
+        left: 0;
+        width: 100%;
+        height: 8rem;
+    }
+
+    .line{
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-title);
+    }
+
+    .dropdown-link.active a{
+        background-color: var(--color-white);
+        color: var(--secondary-color);
+        border-radius: 5px;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .dropdown-link.active:hover a{
+        color: var(--color-white);
+        background-color: var(--secondary-color);
+    }
+
+    .dropdown-link a{
+        color: var(--color-title);
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .dropdown-link:hover a{
+        background-color: var(--orange-pastel);
+    }
+
+    .header-dropdown{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 6.5rem;
+        left: 10%;
+        gap: 1rem;
+        padding: .5rem;
+        background-color: var(--color-white);
+        border-radius: 1rem;
+    }
+
+    .dropdown:hover .header-dropdown{
+        display: flex;
+    }
+
+    .header-conf{
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+    }
+
+    .header-conf div{
+        transition: color 0.1s ease-in-out;
+        cursor: pointer;
+
+        &:hover{
+            color: var(--primary-color);
+        }
+    }
+</style>

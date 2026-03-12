@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Header />
+
+    <!-- PAGO -->
+    <section class="checkout-page">
+
+        <!-- LEFT -->
+        <div class="checkout-left">
+
+            <!-- STEPPER -->
+            <div class="stepper">
+            <div class="step active">
+                <div class="step-dot"></div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-dot"></div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-dot"></div>
+            </div>
+            </div>
+
+            <!-- FORM -->
+            <h1 class="checkout-title">Tarjeta</h1>
+            <div class="form-divider"></div>
+
+            <div class="checkout-form">
+
+            <div class="field-group full">
+                <label class="field-label" for="titular">Titular</label>
+                <input class="field-input" type="text" id="titular" placeholder="" autocomplete="cc-name">
+            </div>
+
+            <div class="field-group full">
+                <label class="field-label" for="numero">Numero de tarjeta</label>
+                <input class="field-input" type="text" id="numero" placeholder="" maxlength="19" autocomplete="cc-number">
+            </div>
+
+            <div class="field-row">
+                <div class="field-group expiry-group">
+                <label class="field-label">Fecha de expiracion</label>
+                <div class="expiry-inputs">
+                    <input class="field-input small" type="text" placeholder="DD" maxlength="2">
+                    <input class="field-input small" type="text" placeholder="MM" maxlength="2">
+                    <input class="field-input small" type="text" placeholder="YYYY" maxlength="4">
+                </div>
+                </div>
+
+                <div class="field-group">
+                <label class="field-label" for="cvv">CVV</label>
+                <input class="field-input" type="text" id="cvv" placeholder="XXX" maxlength="4">
+                </div>
+            </div>
+
+            <a href="/pago-detalle" class="btn-continuar">Continuar</a>
+
+            </div>
+        </div>
+
+        <!-- RIGHT: resumen -->
+        <aside class="checkout-summary">
+            <p class="summary-subtotal">
+            Subtotal (1 producto): <strong>$4,499</strong>
+            </p>
+            <p class="summary-shipping">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Envio gratis
+            </p>
+        </aside>
+
+    </section>
+
+  <Footer />
+</Layout>
+
+
+<style>
+    /* ─── LAYOUT ─── */
+    .checkout-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2.4rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 5rem;
+        align-items: start;
+    }
+
+    /* ─── STEPPER ─── */
+    .stepper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 3.6rem;
+    }
+
+    .step { display: flex; align-items: center; }
+
+    .step-dot {
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        background: #D0D0D0;
+        transition: background .3s;
+        flex-shrink: 0;
+    }
+    .step.active .step-dot { background: #FF6B00; }
+
+    .step-line {
+        width: 8rem;
+        height: 2.5px;
+        background: #4a5568;
+        flex-shrink: 0;
+    }
+
+    /* ─── TITLE ─── */
+    .checkout-title {
+        font-size: clamp(2.8rem, 3vw, 3.6rem);
+        font-weight: 800;
+        margin-bottom: 1.2rem;
+    }
+
+    .form-divider {
+        height: 1.5px;
+        background: #ccc;
+        margin-bottom: 3rem;
+    }
+
+    /* ─── FORM ─── */
+    .checkout-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 62rem;
+    }
+
+    .field-group { display: flex; flex-direction: column; gap: 0.6rem; }
+    .field-group.full { width: 100%; }
+
+    .field-label {
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: #444;
+    }
+
+    .field-input {
+        padding: 1.1rem 1.4rem;
+        border: 1.5px solid #D0D0D0;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+        font-family: inherit;
+        background: #fff;
+        color: #111;
+        outline: none;
+        transition: border-color .2s, box-shadow .2s;
+        width: 100%;
+    }
+    .field-input:focus {
+        border-color: #FF6B00;
+        box-shadow: 0 0 0 3px rgba(255,107,0,.12);
+    }
+    .field-input::placeholder { color: #bbb; }
+
+    .field-input.small {
+        width: 7rem;
+        text-align: center;
+        padding: 1rem 0.8rem;
+    }
+
+    /* expiry + cvv row */
+    .field-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 3.2rem;
+        flex-wrap: wrap;
+    }
+
+    .expiry-inputs {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+    }
+
+    /* continuar button */
+    .btn-continuar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-end;
+        padding: 1.3rem 4rem;
+        background: #FF6B00;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        border-radius: 1rem;
+        text-decoration: none;
+        transition: background .2s, transform .15s;
+        margin-top: 0.4rem;
+    }
+    .btn-continuar:hover { background: #e05e00; transform: translateY(-2px); }
+
+    /* ─── SUMMARY ─── */
+    .checkout-summary {
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: sticky;
+        top: 10rem;
+        padding-top: 1rem;
+    }
+
+    .summary-subtotal {
+        font-size: 1.5rem;
+        color: #333;
+    }
+    .summary-subtotal strong { font-weight: 800; }
+
+    .summary-shipping {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #FF6B00;
+    }
+    .summary-shipping svg { width: 1.6rem; height: 1.6rem; flex-shrink: 0; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+        .checkout-page {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2.4rem 1.6rem 6rem;
+        }
+        .checkout-summary { position: static; order: -1; }
+        .step-line { width: 5rem; }
+        .btn-continuar { align-self: stretch; }
+    }
+
+    @media (max-width: 480px) {
+        .field-row { flex-direction: column; gap: 2rem; }
+        .field-input.small { width: 6rem; }
+    }
+</style>

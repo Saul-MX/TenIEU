@@ -1,0 +1,21 @@
+---
+import Producto from "./Producto.astro";
+import productos from "../data/productos.json";
+---
+
+<!-- Grid de productos -->
+<div class="cards-grid">
+  {productos.map((producto) => (
+    <Producto {...producto} />
+  ))}
+</div>
+
+<style>
+	.cards-grid {
+		display: grid;
+        width: 100%;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 16px;
+		margin-bottom: 32px;
+	}
+</style>

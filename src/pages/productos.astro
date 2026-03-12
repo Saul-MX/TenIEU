@@ -1,0 +1,421 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Header />
+  <!-- PAGE HEADING -->
+  <div class="page-top">
+    <h1>Todos los productos</h1>
+    <p>Total: 124</p>
+  </div>
+
+  <!-- LAYOUT -->
+  <div class="layout">
+
+    <!-- STICKY SIDEBAR -->
+    <aside class="sidebar">
+      <p class="sidebar-title">Filter</p>
+
+      <div class="filter-section">
+        <h3>Brands</h3>
+        <div class="check-grid">
+          <label class="check-label"><input type="checkbox"> Nike</label>
+          <label class="check-label"><input type="checkbox"> Adidas</label>
+          <label class="check-label"><input type="checkbox"> Reebok</label>
+          <label class="check-label"><input type="checkbox"> Under Armour</label>
+          <label class="check-label"><input type="checkbox"> New Balance</label>
+          <label class="check-label"><input type="checkbox"> Puma</label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h3>Price</h3>
+        <div class="price-range-labels"><span>$999</span><span>$4,892</span></div>
+        <input type="range" min="999" max="4892" value="3700">
+      </div>
+
+      <div class="filter-section">
+        <h3>Color</h3>
+        <div class="color-grid">
+          <label class="color-check"><input type="checkbox" class="s-orange"> Orange</label>
+          <label class="color-check"><input type="checkbox" class="s-blue"> Blue</label>
+          <label class="color-check"><input type="checkbox" class="s-white"> White</label>
+          <label class="color-check"><input type="checkbox" class="s-black"> Black</label>
+          <label class="color-check"><input type="checkbox" class="s-coffee"> Coffee</label>
+          <label class="color-check"><input type="checkbox" class="s-grey"> Grey</label>
+          <label class="color-check"><input type="checkbox" class="s-red"> Red</label>
+          <label class="color-check"><input type="checkbox" class="s-green"> Green</label>
+          <label class="color-check"><input type="checkbox" class="s-pink"> Pink</label>
+        </div>
+      </div>
+
+      <button class="btn-clear">
+        Limpiar
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+      </button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <div class="controls-row">
+        <div class="tabs">
+          <button class="tab active">Todos</button>
+          <button class="tab">Soccer</button>
+          <button class="tab">Basketball</button>
+          <button class="tab">Running</button>
+          <button class="tab">Street</button>
+          <button class="tab">Lifestyle</button>
+        </div>
+        <select class="sort-select">
+          <option>Destacados</option>
+          <option>Precio: menor a mayor</option>
+          <option>Precio: mayor a menor</option>
+          <option>Más valorados</option>
+          <option>Más nuevos</option>
+        </select>
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Ultra boost 23"></div>
+          <div class="card-body">
+            <p class="card-brand">Adidas</p><p class="card-name">Ultra boost 23</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div><span class="reviews">(219)</span></div>
+            <p class="card-price">$3,999</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&q=80" alt="Giannis Immortality EP"></div>
+          <div class="card-body">
+            <p class="card-brand">Nike</p><p class="card-name">Giannis Immortality EP</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div><span class="reviews">(122)</span></div>
+            <p class="card-price">$4,499</p>
+            <a href="/producto-detalle" class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80" alt="Classic Leather"></div>
+          <div class="card-body">
+            <p class="card-brand">Reebok</p><p class="card-name">Classic Leather</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div><span class="reviews">(321)</span></div>
+            <p class="card-price">$1,651</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&q=80" alt="Air Max 270"></div>
+          <div class="card-body">
+            <p class="card-brand">Nike</p><p class="card-name">Air Max 270</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><span class="reviews">(487)</span></div>
+            <p class="card-price">$3,299</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&q=80" alt="Stan Smith OG"></div>
+          <div class="card-body">
+            <p class="card-brand">Adidas</p><p class="card-name">Stan Smith OG</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div><span class="reviews">(208)</span></div>
+            <p class="card-price">$2,199</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80" alt="RS-X3 Puzzle"></div>
+          <div class="card-body">
+            <p class="card-brand">Puma</p><p class="card-name">RS-X3 Puzzle</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span></div><span class="reviews">(94)</span></div>
+            <p class="card-price">$1,899</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600&q=80" alt="574 Core"></div>
+          <div class="card-body">
+            <p class="card-brand">New Balance</p><p class="card-name">574 Core</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><span class="reviews">(356)</span></div>
+            <p class="card-price">$2,799</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?w=600&q=80" alt="HOVR Sonic 5"></div>
+          <div class="card-body">
+            <p class="card-brand">Under Armour</p><p class="card-name">HOVR Sonic 5</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div><span class="reviews">(167)</span></div>
+            <p class="card-price">$3,150</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&q=80" alt="Nano X2"></div>
+          <div class="card-body">
+            <p class="card-brand">Reebok</p><p class="card-name">Nano X2</p>
+            <div class="stars"><div class="stars-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div><span class="reviews">(142)</span></div>
+            <p class="card-price">$2,450</p>
+            <button class="btn-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Añadir al Carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <Footer />
+</Layout>
+
+  <style>
+    /* ─── VARIABLES ─── */
+    :root {
+      --orange:   #FF6B00;
+      --orange-h: #e05e00;
+      --bg:       #EDEEF1;
+      --white:    #ffffff;
+      --text:     #111111;
+      --muted:    #888888;
+      --border:   #E0E0E0;
+      --sw:       230px;    /* sidebar width */
+      --maxw:     1200px;
+      --pad:      2.4rem;
+      /* Debe coincidir con la altura del header (.header { height: 9rem }) */
+      --header-h: 9rem;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ─── PAGE HEADING ─── */
+    .page-top {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2.8rem var(--pad) 1.6rem;
+    }
+    .page-top h1 { font-size: 2.8rem; font-weight: 700; }
+    .page-top p  { font-size: 1.4rem; color: var(--muted); margin-top: 0.4rem; }
+
+    /* ─── LAYOUT ─── */
+    .layout {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad) 8rem;
+      display: flex;
+      gap: 2.8rem;
+      align-items: flex-start;
+    }
+
+    /* ─── STICKY SIDEBAR ─── */
+    /*
+      position: sticky es perfecto aquí porque el header también es sticky.
+      top = altura del header para que quede justo debajo al pegar.
+      max-height limita la caja y overflow-y permite scroll interno si el
+      contenido es más largo que la pantalla disponible.
+    */
+    .sidebar {
+      position: sticky;
+      top: var(--header-h);
+      flex-shrink: 0;
+      width: var(--sw);
+      max-height: calc(100vh - var(--header-h));
+      overflow-y: auto;
+      background: var(--white);
+      border-radius: 1.6rem;
+      border: 1px solid var(--border);
+      padding: 2.4rem 2rem 3.2rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    /* ─── SIDEBAR CONTENTS ─── */
+    .sidebar-title { font-size: 2rem; font-weight: 700; margin-bottom: 2.4rem; }
+
+    .filter-section { margin-bottom: 2.4rem; }
+    .filter-section h3 {
+      font-size: 1.1rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 1.2rem;
+    }
+
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 0.6rem; }
+    .check-label {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-size: 1.3rem; cursor: pointer; user-select: none;
+    }
+    .check-label input[type="checkbox"] {
+      appearance: none; width: 1.6rem; height: 1.6rem;
+      border: 1.5px solid #ccc; border-radius: 4px;
+      flex-shrink: 0; cursor: pointer; position: relative;
+      transition: border-color .15s, background .15s;
+    }
+    .check-label input:checked { background: var(--orange); border-color: var(--orange); }
+    .check-label input:checked::after {
+      content: ''; position: absolute; top: 2px; left: 5px;
+      width: 5px; height: 9px;
+      border: 2px solid #fff; border-top: none; border-left: none;
+      transform: rotate(45deg);
+    }
+
+    .price-range-labels {
+      display: flex; justify-content: space-between;
+      font-size: 1.2rem; color: var(--muted); margin-bottom: 1rem;
+    }
+    input[type="range"] {
+      -webkit-appearance: none; width: 100%; height: 4px; border-radius: 4px;
+      background: linear-gradient(to right, var(--orange) 0%, var(--orange) 74%, #ddd 74%, #ddd 100%);
+      outline: none; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 1.8rem; height: 1.8rem; border-radius: 50%;
+      background: var(--orange); border: 3px solid white;
+      box-shadow: 0 1px 5px rgba(0,0,0,.25); cursor: pointer;
+    }
+
+    .color-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 0.6rem; }
+    .color-check { display: flex; align-items: center; gap: 0.7rem; font-size: 1.3rem; cursor: pointer; }
+    .color-check input[type="checkbox"] {
+      appearance: none; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+      border: 2px solid #ccc; cursor: pointer; flex-shrink: 0;
+      transition: box-shadow .15s;
+    }
+    .color-check input:checked { box-shadow: 0 0 0 3px var(--orange); border-color: var(--orange); }
+
+    .s-orange { background:#FF6B00; border-color:#FF6B00 !important; }
+    .s-blue   { background:#3B7DD8; border-color:#3B7DD8 !important; }
+    .s-white  { background:#f0f0f0; border-color:#ccc    !important; }
+    .s-black  { background:#222;    border-color:#222    !important; }
+    .s-coffee { background:#7B5335; border-color:#7B5335 !important; }
+    .s-grey   { background:#9E9E9E; border-color:#9E9E9E !important; }
+    .s-red    { background:#E53935; border-color:#E53935 !important; }
+    .s-green  { background:#43A047; border-color:#43A047 !important; }
+    .s-pink   { background:#E91E8C; border-color:#E91E8C !important; }
+
+    .btn-clear {
+      display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+      width: 100%; margin-top: 2rem; padding: 1rem 2rem;
+      background: var(--orange); color: #fff;
+      font-family: 'DM Sans', sans-serif; font-size: 1.4rem; font-weight: 600;
+      border: none; border-radius: 1rem; cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-clear:hover { background: var(--orange-h); }
+    .btn-clear svg { width: 1.6rem; height: 1.6rem; }
+
+    /* ─── MAIN CONTENT ─── */
+    .main-content { flex: 1; min-width: 0; }
+
+    .controls-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.2rem; margin-bottom: 2rem; flex-wrap: wrap;
+    }
+
+    .tabs {
+      display: flex; background: #E0E1E6; border-radius: 1.2rem; padding: 0.4rem; gap: 0.2rem;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 0.7rem 1.4rem; border-radius: 0.9rem;
+      font-size: 1.4rem; font-weight: 500;
+      color: var(--muted); cursor: pointer; border: none; background: transparent;
+      font-family: 'DM Sans', sans-serif; transition: background .2s, color .2s;
+      white-space: nowrap;
+    }
+    .tab.active {
+      background: var(--white); color: var(--text); font-weight: 600;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    }
+    .tab:hover:not(.active) { color: var(--text); }
+
+    .sort-select {
+      padding: 0.8rem 3.6rem 0.8rem 1.4rem; border: 1.5px solid var(--border);
+      border-radius: 1rem; font-family: 'DM Sans', sans-serif;
+      font-size: 1.4rem; font-weight: 500; background: var(--white); color: var(--text);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1.2rem center;
+      cursor: pointer; outline: none; flex-shrink: 0;
+    }
+    .sort-select:focus { border-color: var(--orange); }
+
+    /* ─── PRODUCT GRID ─── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .product-card {
+      background: var(--white); border-radius: 1.6rem; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      transition: box-shadow .25s, transform .25s;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.12); transform: translateY(-3px); }
+
+    .card-img { width: 100%; aspect-ratio: 1 / 0.82; overflow: hidden; background: #f5f5f5; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .product-card:hover .card-img img { transform: scale(1.04); }
+
+    .card-body { padding: 1.4rem 1.6rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+    .card-brand { font-size: 1.2rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
+    .card-name  {
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    .stars { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; }
+    .stars-row { display: flex; gap: 0.1rem; }
+    .star { font-size: 1.4rem; color: #FFC107; }
+    .star.empty { color: #ddd; }
+    .reviews { font-size: 1.2rem; color: var(--muted); }
+
+    .card-price { font-size: 1.8rem; font-weight: 700; margin-bottom: 1.2rem; margin-top: auto; }
+
+    .btn-cart {
+      display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+      width: 100%; padding: 1rem; background: var(--orange); color: #fff;
+      font-family: 'DM Sans', sans-serif; font-size: 1.3rem; font-weight: 600;
+      border: none; border-radius: 1rem; cursor: pointer; transition: background .2s;
+    }
+    .btn-cart:hover { background: var(--orange-h); }
+    .btn-cart svg { width: 1.6rem; height: 1.6rem; flex-shrink: 0; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      :root { --sw: 200px; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .layout { gap: 0; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .tabs .tab { font-size: 1.2rem; padding: 0.6rem 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid { gap: 1.2rem; }
+      .card-body { padding: 1rem 1.2rem 1.2rem; }
+    }
+  </style>
+</Layout>
