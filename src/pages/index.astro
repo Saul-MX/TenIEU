@@ -3,29 +3,22 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-//importa imagen
 import TenisHeroImg from '../assets/tenis-hero.png';
 import AirMaxPulseImg from '../assets/air-max-pulse.jpg';
 import Ultraboost22Img from '../assets/ultraBoost.webp';
 import GiannisEpImg from '../assets/giannisEp.avif';
 import ClassicLeatherImg from '../assets/classicLeather.webp';
 
-//Importar iconos
 import StarIcon from '../assets/icons/Star.astro';
 import ArrowRightIcon from '../assets/icons/Arrow.astro';
-
-//importar card
 import Producto from '../components/Producto.astro';
-
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 	<Header />
 	<main>
+
+		<!-- HERO -->
 		<section class="section-hero">
 			<div class="hero-content">
 				<span class="hero-span">
@@ -45,10 +38,10 @@ import Producto from '../components/Producto.astro';
 
 			<article class="hero-card">
 				<img class="hero-img" src={TenisHeroImg.src} alt="Imagen principal de la tienda de tenis">
-				<!-- Carrusel de imagenes -->
 			</article>
 		</section>
 
+		<!-- DESTACADOS -->
 		<section class="section-highlights">
 			<div class="highlights-header">
 				<h2 class="highlights-title title">Destacados</h2>
@@ -56,30 +49,31 @@ import Producto from '../components/Producto.astro';
 			</div>
 
 			<div class="highlights-cards">
-				<!-- Tarjetas de productos destacados -->
 				<div class="cards-grid">
-					<Producto brand="Nike" model="Air Max Pulse" price="120" image={AirMaxPulseImg.src} calification="150"/>
-					<Producto brand="Adidas" model="Ultraboost 22" price="180" image={Ultraboost22Img.src} calification="200"/>
-					<Producto brand="Nike" model="Giannis EP" price="110" image={GiannisEpImg.src} calification="90"/>
+					<Producto brand="Nike"   model="Air Max Pulse"   price="120" image={AirMaxPulseImg.src}    calification="150"/>
+					<Producto brand="Adidas" model="Ultraboost 22"   price="180" image={Ultraboost22Img.src}   calification="200"/>
+					<Producto brand="Nike"   model="Giannis EP"      price="110" image={GiannisEpImg.src}      calification="90"/>
 					<Producto brand="Rebook" model="Classic Leather" price="175" image={ClassicLeatherImg.src} calification="120"/>
-			</div>
+				</div>
 
-			<div class="highlights-btn">
-				<button>
-					<ArrowRightIcon class="w-6"/>
-					 See All products
-				</button>
+				<div class="highlights-btn">
+					<button>
+						<ArrowRightIcon class="w-6"/>
+						See All products
+					</button>
+				</div>
 			</div>
 		</section>
 
+		<!-- BANNER -->
 		<section class="section-card bg-stone-900 rounded-4xl py-10" style="margin: 5rem auto;">
 			<div class="card-content flex flex-col gap-10">
 				<h2 class="card-title title text-white">TenIEU</h2>
 				<p class="card-paragraph text-white" style="width:fit-content; display:flex; margin: 0 auto; font-size: 2rem;">El paso que define quién eres.</p>
 			</div>
-
 		</section>
 
+		<!-- CATEGORÍAS -->
 		<section class="section-categories flex flex-col gap-5 w-full">
 			<div class="categories-header flex justify-between" style="width: 100%;">
 				<h2 class="categories-title">Categorías</h2>
@@ -90,159 +84,147 @@ import Producto from '../components/Producto.astro';
 			</div>
 
 			<div class="category-wrapper">
-
-				<!-- Item 1: Lifestyle -->
-				<div class="category-item thumb-running bg-cover bg-center bg-no-repeat">
-					<div class="category-thumb thumb-running-a">
-					</div>
+				<div class="category-item thumb-running">
+					<div class="category-thumb"></div>
 					<span class="category-tag">Running</span>
-					<button class="category-cta">
-					Ver mas
-					<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-					</button>
+					<button class="category-cta">Ver mas<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
 				</div>
 
-				<!-- Item 2: Basketball -->
-				<div class="category-item thumb-basketball bg-no-repeat">
+				<div class="category-item thumb-basketball">
 					<div class="category-thumb"></div>
 					<span class="category-tag">Basketball</span>
-					<button class="category-cta">
-					Ver mas
-					<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-					</button>
+					<button class="category-cta">Ver mas<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
 				</div>
 
-				<!-- Item 3: Lifestyle -->
 				<div class="category-item thumb-lifestyle">
-					<div class="category-thumb thumb-lifestyle-b"></div>
+					<div class="category-thumb"></div>
 					<span class="category-tag">Lifestyle</span>
-					<button class="category-cta">
-					Ver mas
-					<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-					</button>
+					<button class="category-cta">Ver mas<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
 				</div>
-
 			</div>
-
 		</section>
 
 	</main>
-
 	<Footer />
 </Layout>
 
 <style>
-
-	/* max-width */
-	.section-hero, 
-	.section-highlights, 
+	/* ── BASE ── */
+	.section-hero,
+	.section-highlights,
 	.section-categories,
-	.section-card{
+	.section-card {
 		max-width: 1200px;
 		width: 100%;
 		margin: 0 auto;
+		padding-left: 2.4rem;
+		padding-right: 2.4rem;
+		box-sizing: border-box;
 	}
 
+	/* ══════════════════
+	   HERO
+	══════════════════ */
 	.section-hero {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding-top: 15rem;
+		padding-top: 10rem;
+		gap: 4rem;
 	}
 
-	.hero-title{
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		flex: 1;
+	}
+
+	.hero-title {
 		font-size: 7rem;
 		font-weight: 700;
 		line-height: 1;
 	}
 
-	.hero-content{
+	.hero-span {
 		display: flex;
-		flex-direction: column;
-		gap: 3rem;
+		gap: 1rem;
+		align-items: center;
+		width: fit-content;
+		padding: .5rem 1.2rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+		background-color: var(--primary-color);
+		color: var(--color-white);
+		border-radius: 2rem;
+	}
 
-		.hero-span{
-			display: flex;
-			gap: 1rem;
-			align-items: center;
-			width: 16rem;
-			padding: .5rem;
-			font-size: 1.5rem;
-			font-weight: 600;
+	.hero-paragraph {
+		font-size: 2rem;
+		font-weight: 600;
+		color: var(--color-text);
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.hero-button {
+		padding: 1rem 2rem;
+		border-radius: 1rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+		transition: all 0.2s ease-in-out;
+		cursor: pointer;
+		text-decoration: none;
+
+		&.colection {
 			background-color: var(--primary-color);
 			color: var(--color-white);
-			border-radius: 2rem;
+			&:hover {
+				background-color: var(--orange-pastel);
+				color: var(--color-title);
+				box-shadow: 0 5px 15px rgba(255, 136, 0, 0.507);
+			}
 		}
 
-		.hero-paragraph{
-			font-size: 2rem;
-			font-weight: 600;
+		&.offers {
+			padding: 0;
+			border-radius: 0;
 			color: var(--color-text);
-		}
-
-		.hero-buttons{
-			display: flex;
-			gap: 2rem;
-
-			.hero-button{
-				padding: 1rem 2rem;
-				border-radius: 1rem;
-				font-size: 1.5rem;
-				font-weight: 600;
-				transition: all 0.1s ease-in-out;
-				cursor: pointer;
-
-				&.colection{
-					background-color: var(--primary-color);
-					color: var(--color-white);
-					transition: all 0.2s ease-in-out;
-
-					&:hover{
-						background-color: var(--orange-pastel);
-						color: var(--color-title);
-						box-shadow: 0 5px 15px rgba(255, 136, 0, 0.507);
-					}
-				}
-
-				&.offers{
-					padding: 0;
-					border-radius: 0;
-					color: var(--color-text);
-					border-bottom: 1px solid var(--color-text);
-					transition: all 0.2s ease-in-out;
-
-					&:hover{
-						color: var(--secondary-color);
-						border-bottom: 1px solid var(--primary-color);
-					}
-				}
+			border-bottom: 1px solid var(--color-text);
+			&:hover {
+				color: var(--secondary-color);
+				border-bottom: 1px solid var(--primary-color);
 			}
 		}
 	}
 
-	.hero-card{
-		max-width: 550px;
-	}
+	.hero-card { max-width: 550px; flex-shrink: 0; }
+	.hero-img  { width: 100%; display: block; }
 
-	.title{
-		width:fit-content;
+	/* ══════════════════
+	   DESTACADOS
+	══════════════════ */
+	.title {
+		width: fit-content;
 		font-size: 5rem;
 		font-weight: 600;
 		line-height: 1;
 		margin: 0 auto;
 	}
 
-	/* Seccion de destacados */
-	.section-highlights{
+	.section-highlights {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-between;
-		padding-top: 15rem;
+		padding-top: 12rem;
 		gap: 4rem;
 	}
 
-	.highlights-header{
+	.highlights-header {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -250,16 +232,10 @@ import Producto from '../components/Producto.astro';
 		gap: 3rem;
 		text-align: center;
 
-		p{
-			font-size: 2rem;
-			font-weight: 600;
-			color: var(--color-text);
-		}
+		p { font-size: 2rem; font-weight: 600; color: var(--color-text); }
 	}
 
-	.highlights-cards{
-		width: 100%;
-	}
+	.highlights-cards { width: 100%; }
 
 	.cards-grid {
 		display: grid;
@@ -268,11 +244,11 @@ import Producto from '../components/Producto.astro';
 		margin-bottom: 32px;
 	}
 
-	.highlights-btn{
+	.highlights-btn {
 		display: flex;
 		justify-content: center;
 
-		button{
+		button {
 			display: flex;
 			flex-direction: row-reverse;
 			align-items: center;
@@ -287,150 +263,139 @@ import Producto from '../components/Producto.astro';
 			border: none;
 			transition: background 0.2s, transform 0.1s;
 			cursor: pointer;
+
+			&:hover { background: #e05e00; transform: scale(1.03); }
 		}
 	}
-	.btn-all:hover { background: #e05e00; transform: scale(1.03); }
 
-	/* Seccion de categorias */
-
-	.categories-header{
+	/* ══════════════════
+	   CATEGORÍAS
+	══════════════════ */
+	.categories-header {
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 2rem;
 
-		h2{
-			font-size: 5rem;
-			font-weight: 600;
-			line-height: 1;
-		}
+		h2 { font-size: 5rem; font-weight: 600; line-height: 1; }
+		.categories-arrow { display: flex; gap: 2rem; }
+	}
 
-		.categories-arrow{
-			display: flex;
+	.category-wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		width: 100%;
+	}
+
+	.category-item {
+		position: relative;
+		border-radius: 18px;
+		overflow: hidden;
+		aspect-ratio: 1 / 1;
+		cursor: pointer;
+	}
+
+	.thumb-running    { background-image: url("../assets/running.avif");  background-size: cover; background-position: center; background-repeat: no-repeat; }
+	.thumb-basketball { background-image: url("../assets/basket.webp");   background-size: cover; background-position: center; background-repeat: no-repeat; }
+	.thumb-lifestyle  { background-image: url("../assets/lifestyle.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+	.category-thumb {
+		width: 100%; height: 100%;
+		display: flex; align-items: center; justify-content: center;
+		font-size: 5rem;
+		transition: transform 0.4s ease;
+	}
+	.category-item:hover .category-thumb { transform: scale(1.05); }
+
+	.category-tag {
+		position: absolute; top: 14px; right: 14px;
+		background: #ff6b00; color: #fff;
+		font-size: 1.25rem; font-weight: 600;
+		padding: 5px 14px; border-radius: 50px; letter-spacing: 1px;
+	}
+
+	.category-cta {
+		position: absolute; bottom: 14px; left: 14px;
+		display: inline-flex; align-items: center; gap: 6px;
+		background: #ff6b00; color: #fff;
+		font-size: 1.25rem; font-weight: 600;
+		padding: 9px 18px; border-radius: 50px; border: none;
+		cursor: pointer; letter-spacing: 1px;
+		transition: background 0.2s, transform 0.15s;
+		&:hover { background: #e05e00; transform: scale(1.04); }
+
+		svg {
+			width: 13px; height: 13px; fill: none; stroke: #fff;
+			stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+		}
+	}
+
+	/* ══════════════════════════════
+	   RESPONSIVE — Tablet 1024px
+	══════════════════════════════ */
+	@media (max-width: 1024px) {
+		.section-hero       { padding-top: 7rem; }
+		.hero-title         { font-size: 5.5rem; }
+		.section-highlights { padding-top: 8rem; }
+		.cards-grid         { grid-template-columns: repeat(2, 1fr); }
+	}
+
+	/* ══════════════════════════════
+	   RESPONSIVE — Tablet 768px
+	══════════════════════════════ */
+	@media (max-width: 768px) {
+		/* Hero: imagen arriba, texto abajo */
+		.section-hero {
+			flex-direction: column;
+			padding-top: 4rem;
+			text-align: center;
 			gap: 2rem;
 		}
+		.hero-card      { max-width: 100%; width: 100%; }
+		.hero-img       { max-height: 34rem; object-fit: contain; margin: 0 auto; }
+		.hero-title     { font-size: 4rem; }
+		.hero-paragraph { font-size: 1.7rem; }
+		.hero-span      { margin: 0 auto; }
+		.hero-buttons   { justify-content: center; }
+
+		/* Destacados */
+		.section-highlights { padding-top: 6rem; gap: 3rem; }
+		.title              { font-size: 4rem; }
+		.highlights-header p{ font-size: 1.7rem; }
+
+		/* Categorías */
+		.categories-header h2 { font-size: 3.6rem; }
+		.categories-arrow     { display: none; }
+		.category-wrapper     { grid-template-columns: repeat(2, 1fr); }
+		.category-item        { aspect-ratio: 4 / 3; }
+		/* tercera tarjeta ocupa todo el ancho */
+		.category-item:last-child { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
 	}
 
-  .category-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    width: 100%;
-  }
+	/* ══════════════════════════════
+	   RESPONSIVE — Móvil 540px
+	══════════════════════════════ */
+	@media (max-width: 540px) {
+		.hero-title     { font-size: 3.4rem; }
+		.hero-paragraph { font-size: 1.5rem; }
 
-  .category-item {
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    aspect-ratio: 1 / 1;
-    cursor: pointer;
-  }
+		.title                { font-size: 3.2rem; }
+		.highlights-header p  { font-size: 1.5rem; }
+		.cards-grid           { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
-  .thumb-running{
-	background-image: url("../assets/running.avif");
-	background-size: cover;        /* ✅ Cubre sin distorsionar */
-	background-position: center;   /* ✅ Centra la parte más relevante */
-	background-repeat: no-repeat;
-  }
-
-  .thumb-basketball{
-	background-image: url("../assets/basket.webp");
-	background-size: cover;        /* ✅ Cubre sin distorsionar */
-	background-position: center;   /* ✅ Centra la parte más relevante */
-	background-repeat: no-repeat;
-  }
-
-  .thumb-lifestyle{
-	background-image: url("../assets/lifestyle.jpg");
-	background-size: cover;        /* ✅ Cubre sin distorsionar */
-	background-position: center;   /* ✅ Centra la parte más relevante */
-	background-repeat: no-repeat;
-  }
-
-  .category-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-
-  .category-item:hover .category-photo {
-    transform: scale(1.05);
-  }
-
-  .category-thumb {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    transition: transform 0.4s ease;
-  }
-
-  .category-item:hover .category-thumb {
-    transform: scale(1.05);
-  }
-
-  /* Categorias imgenes de fondo */
-
-  .category-tag {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    background: #ff6b00;
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 600;
-    padding: 5px 14px;
-    border-radius: 50px;
-    letter-spacing: 1px;
-  }
-
-  .category-cta {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #ff6b00;
-    color: #fff;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    padding: 9px 18px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-	letter-spacing: 1px;
-    transition: background 0.2s, transform 0.15s;
-  }
-
-  .category-cta:hover {
-    background: #e05e00;
-    transform: scale(1.04);
-  }
-
-  .category-cta svg {
-    width: 13px;
-    height: 13px;
-    fill: none;
-    stroke: #fff;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-	@media (max-width: 700px) {
-		.cards-grid { grid-template-columns: repeat(2, 1fr); }
-
-		.category-wrapper { grid-template-columns: 1fr; max-width: 400px; }
+		.categories-header h2 { font-size: 2.8rem; }
+		.category-wrapper     { grid-template-columns: 1fr; }
+		.category-item        { aspect-ratio: 4 / 3; }
+		.category-item:last-child { grid-column: auto; aspect-ratio: 4 / 3; }
 	}
-	@media (max-width: 420px) {
+
+	/* ══════════════════════════════
+	   RESPONSIVE — Móvil 380px
+	══════════════════════════════ */
+	@media (max-width: 380px) {
+		.hero-title { font-size: 2.8rem; }
 		.cards-grid { grid-template-columns: 1fr; }
 	}
 </style>
